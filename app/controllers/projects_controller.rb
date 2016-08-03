@@ -26,7 +26,9 @@ class ProjectsController < ApplicationController
     @project.update(project_params)
     redirect_to @portfolio
   end
+
   private
+  
   def set_project
     @project = @portfolio.projects.find(params[:id])
   end
