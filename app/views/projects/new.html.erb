@@ -1,3 +1,5 @@
 <h1>Add a Project to <%= @portfolio.name.capitalize %></h1>
 
-<%= render 'fields'%>
+<%= form_for(@project, :url => portfolio_projects_path(@portfolio)) do |f| %>
+  <%= render 'fields', :f => f %>
+<% end %>
