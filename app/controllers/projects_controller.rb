@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_portfolio, only: [:new, :create, :edit, :show, :update]
+  before_action :set_project, only: [:show, :edit, :update]
 
   def new
     @project = @portfolio.projects.build
@@ -16,19 +17,19 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = @portfolio.projects.find(params[:id])
   end
 
   def edit
-    @project = @portfolio.projects.find(params[:id])
   end
 
   def update
-    @project = @portfolio.projects.find(params[:id])
     @project.update(project_params)
     redirect_to @portfolio
   end
   private
+  def set_project
+    @project = @portfolio.projects.find(params[:id])
+  end
 
   def set_portfolio
     @portfolio = Portfolio.find(params[:portfolio_id])

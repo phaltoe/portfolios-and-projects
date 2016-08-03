@@ -1,5 +1,6 @@
 <h1>Add a Project to <%= @portfolio.name.capitalize %></h1>
 
+<!--The NEW view defines it's own form build and passes to a field partial -->
 <%= form_for(@project, :url => portfolio_projects_path(@portfolio)) do |f| %>
   <%= render 'fields', :f => f %>
 <% end %>
