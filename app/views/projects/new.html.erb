@@ -1,8 +1,5 @@
 <h1>Add a Project to <%= @portfolio.name.capitalize %></h1>
 
 <%= form_for(@project, url: portfolio_projects_path(@portfolio)) do |f| %>
-  <%= f.text_area :title %>
-  <%= f.text_area :description %>
-
-  <%= f.submit %>
+  <%= render 'fields', :f => f %>
 <% end %>  

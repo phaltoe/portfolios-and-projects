@@ -6,6 +6,9 @@
 </p>
 
 <ul>
+  <% @portfolio.projects.each do |project| %>
+    <li><%= link_to project.title, portfolio_project_path(@portfolio, project) %></li>
+  <% end  %>
   <li><%= link_to 'Add Project', new_portfolio_project_path(@portfolio) %></li>
 </ul>
 

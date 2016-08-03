@@ -1,0 +1,5 @@
+<h1>Edit <%= @project.title.capitalize %></h1>
+
+<%= form_for(@project, url: portfolio_project_path(@portfolio, @project)) do |f| %>
+  <%= render 'fields', :f => f %>
+<% end %> 

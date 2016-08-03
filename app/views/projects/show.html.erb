@@ -1,0 +1,7 @@
+<h1><%= @project.title %>, in <%=@project.portfolio.name %></h1>
+
+<p><%= @project.description %></p>
+
+<p>
+  <%= link_to "Edit #{@project.title}", edit_portfolio_project_path(@portfolio, @project) %>
+</p>
